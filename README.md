@@ -279,6 +279,8 @@ File `vercel.json` sudah mengatur hal-hal berikut:
 
 ---
 
+</div>
+
 ## Struktur Proyek
 
 ```
@@ -309,6 +311,8 @@ super-pixel-bros-web/
     │   └── levelMaps.js       # 20 level asli game dalam format ASCII terkompresi
     └── styles/                # base.css, components.css, pages.css
 ```
+
+<div align="center">
 
 ---
 
