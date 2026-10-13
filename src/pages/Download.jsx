@@ -5,7 +5,7 @@ import { PageHero } from "../components/Chrome.jsx";
 import { Section, Panel, Reveal, Accordion, Btn } from "../components/Ui.jsx";
 import { Sprite } from "../components/Sprite.jsx";
 import { Icon } from "../components/Icons.jsx";
-import { PlatformGrid, StatusBadge, StatusBanner } from "../components/Release.jsx";
+import { DesktopShowcase, AndroidShowcase, StatusBadge, StatusBanner } from "../components/Release.jsx";
 
 const STEPS = [
   { k: "belum-rilis", t: "Pengembangan", d: "Level, aset, dan musik dipoles. Download masih terkunci." },
@@ -36,7 +36,12 @@ export default function Download() {
 
       <Section title="Download Game" sprite="coin" lead={`Versi ${VERSION} · ${info.headline}${status === "belum-rilis" && RELEASE_DATE ? ` · target ${RELEASE_DATE}` : ""}`}>
         <Reveal><div className="dl-status"><StatusBadge /></div></Reveal>
-        <PlatformGrid />
+        <Reveal><h3 className="dl-group"><Icon name="windows" size={16} />Komputer · Windows, Linux, macOS</h3></Reveal>
+        <Reveal variant="pop"><DesktopShowcase /></Reveal>
+
+        <Reveal><h3 className="dl-group dl-group-android"><Icon name="android" size={16} />Perangkat Mobile · Android</h3></Reveal>
+        <Reveal variant="pop"><AndroidShowcase /></Reveal>
+
         <Reveal><StatusBanner /></Reveal>
       </Section>
 
