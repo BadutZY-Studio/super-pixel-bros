@@ -151,3 +151,38 @@
 .hud-dl { padding: 0; background: none; box-shadow: 3px 3px 0 var(--ink); }
 .hud-dl .btn-face { min-height: 42px; }
 @media (max-width: 700px) { .hud-dl .btn-face { min-height: 40px; } }
+
+/* ============================ LAPORKAN MASALAH (halaman Download) ============================ */
+.bug { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 28px; margin-top: 28px; padding: 26px 28px; background: linear-gradient(135deg, var(--n2), var(--n1)); border: 4px solid var(--ink); border-left-width: 10px; border-left-color: var(--red); box-shadow: 4px 4px 0 var(--ink); }
+.bug-ico { display: grid; place-items: center; width: 88px; height: 88px; background: var(--n0); border: 4px solid var(--ink); box-shadow: inset 0 0 0 3px var(--red-lo), 4px 4px 0 var(--ink); color: var(--red-hi); animation: bug-hop 1.8s steps(1) infinite; }
+.bug-ico .ico { filter: drop-shadow(0 3px 0 rgba(0, 0, 0, .45)); }
+@keyframes bug-hop { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -4px, 0); } }
+.bug-body { min-width: 0; }
+.bug-tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; background: var(--red); border: 3px solid var(--ink); color: #fff; font-family: var(--px); font-size: 9px; line-height: 1.4; box-shadow: 2px 2px 0 var(--ink); }
+.bug h3 { margin-top: 14px; font-size: 13px; line-height: 1.6; color: var(--text); text-shadow: 2px 2px 0 var(--ink); }
+.bug p { margin-top: 8px; max-width: 58ch; color: var(--muted); font-size: 1.05rem; }
+.bug-tips { display: flex; flex-wrap: wrap; gap: 8px 10px; margin: 16px 0 0; padding: 0; list-style: none; }
+.bug-tips li { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background: var(--n0); border: 3px solid var(--ink); color: var(--text); font-size: .95rem; line-height: 1.3; }
+.bug-tips .ico { color: var(--green-hi); }
+.bug-cta { display: flex; flex-direction: column; align-items: stretch; gap: 14px; min-width: 260px; text-align: center; }
+.bug-cta .btn { width: 100%; }
+.bug-cta .btn-face { width: 100%; }
+.bug-cta small { color: var(--dim); font-size: .95rem; line-height: 1.3; }
+.bug.locked .bug-ico { color: var(--dim); box-shadow: inset 0 0 0 3px var(--n3), 4px 4px 0 var(--ink); }
+.bug.locked .bug-tag { background: var(--n4); }
+.bug.locked { border-left-color: var(--n4); }
+@media (max-width: 960px) {
+  .bug { grid-template-columns: auto minmax(0, 1fr); }
+  .bug-cta { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; gap: 18px; min-width: 0; text-align: left; }
+  .bug-cta .btn { flex: 0 1 300px; width: auto; }
+}
+@media (max-width: 700px) {
+  .bug { grid-template-columns: 1fr; gap: 18px; padding: 20px 18px; border-left-width: 8px; }
+  .bug-ico { width: 64px; height: 64px; }
+  .bug-ico .ico { width: 36px; height: auto; }
+  .bug h3 { font-size: 11px; }
+  .bug p { font-size: 1rem; }
+  .bug-cta { flex-direction: column; align-items: stretch; text-align: center; gap: 12px; }
+  .bug-cta .btn { flex: none; width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .bug-ico { animation: none; } }
